@@ -10,3 +10,13 @@ headers = {
 response = requests.get("https://api.github.com/user", headers=headers)
 print (response.status_code)
 print (response.json())
+repo_url = "https://api.github.com/repos/psf/requests"
+repo_reponse = requests.get(repo_url, headers=headers)
+
+repo_data = repo_reponse.json()
+
+print("Nome:", repo_data["full_name"])
+print("Estrelas:", repo_data["stargazers_count"])
+print("Forks:", repo_data["forks_count"])
+print("Linguagem:", repo_data["language"])
+print("Criado em:", repo_data["created_at"])
