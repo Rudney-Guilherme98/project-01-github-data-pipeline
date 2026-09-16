@@ -15,12 +15,19 @@ headers = {
 response = requests.get("https://api.github.com/user", headers=headers)
 print (response.status_code)
 print (response.json())
-repo_data = buscar_repositorio("psf", "requests", headers)
-
-print("Nome:", repo_data["full_name"])
-print("Estrelas:", repo_data["stargazers_count"])
-print("Forks:", repo_data["forks_count"])
-print("Linguagem:", repo_data["language"])
-print("Criado em:", repo_data["created_at"])
-with open("data/raw/psf_requests.json","w") as arquivo:
-    json.dump(repo_data, arquivo, indent=4)
+repositorios = [
+    ("psf", "requests"),
+    ("pallets", "flask"),
+    ("pandas-dev", "pandas"),
+]
+for owner, repo in repositorios:
+    repo_data = buscar_repositorio(owner, repo, headers)
+    print("Nome:", repo_data["full_name"])
+    print("Estrelas:", repo_data["stargazers_count"])
+    print("Forks:", repo_data["forks_count"])
+    print("Linguagem:", repo_data["language"])
+    print("Criado em:", repo_data["created_at"])
+    print("---")
+    nome_arquivo = f"data/raw/{owner}_{repo}.json"
+    with open(nome_arquivo, "w") as arquivo:
+        json.dump(repo_data, arquivo, indent=4)
