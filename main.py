@@ -2,9 +2,14 @@ import os
 import requests
 import json
 from dotenv import load_dotenv
-def buscar_repositorio (owner, repo, headers):
+def busca_repositorio(owner, repo, headers):
     url = f"https://api.github.com/repos/{owner}/{repo}"
     response = requests.get(url, headers=headers)
+
+    if response.status_code !=200:
+        print(f"Erro ao buscar {owner}/{repo}: status {response.status_code}")
+        return None
+
     return response.json()
 
 load_dotenv()
@@ -29,8 +34,12 @@ def exibir_repositorio(repo_data):
     print("---")
 
 for owner, repo in repositorios:
-    repo_data = buscar_repositorio(owner, repo, headers)
+    repo_data = busca_repositorio(owner, repo, headers)
+
+    if repo_data is None:
+        continue
+
     exibir_repositorio(repo_data)
     nome_arquivo = f"data/raw/{owner}_{repo}.json"
-    with open(nome_arquivo, "w") as arquivo:
+    with open(nome_arquivo,"w") as arquivo: 
         json.dump(repo_data, arquivo, indent=4)
