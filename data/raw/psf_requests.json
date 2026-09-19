@@ -66,7 +66,7 @@
     "releases_url": "https://api.github.com/repos/psf/requests/releases{/id}",
     "deployments_url": "https://api.github.com/repos/psf/requests/deployments",
     "created_at": "2011-02-13T18:38:17Z",
-    "updated_at": "2026-09-15T18:53:38Z",
+    "updated_at": "2026-09-19T15:26:27Z",
     "pushed_at": "2026-09-07T16:54:39Z",
     "git_url": "git://github.com/psf/requests.git",
     "ssh_url": "git@github.com:psf/requests.git",
@@ -74,8 +74,8 @@
     "svn_url": "https://github.com/psf/requests",
     "homepage": "https://requests.readthedocs.io/en/latest/",
     "size": 13629,
-    "stargazers_count": 54304,
-    "watchers_count": 54304,
+    "stargazers_count": 54329,
+    "watchers_count": 54329,
     "language": "Python",
     "has_issues": true,
     "has_projects": false,
@@ -83,11 +83,11 @@
     "has_wiki": true,
     "has_pages": false,
     "has_discussions": false,
-    "forks_count": 10143,
+    "forks_count": 10473,
     "mirror_url": null,
     "archived": false,
     "disabled": false,
-    "open_issues_count": 237,
+    "open_issues_count": 239,
     "license": {
         "key": "apache-2.0",
         "name": "Apache License 2.0",
@@ -111,9 +111,9 @@
         "requests"
     ],
     "visibility": "public",
-    "forks": 10143,
-    "open_issues": 237,
-    "watchers": 54304,
+    "forks": 10473,
+    "open_issues": 239,
+    "watchers": 54329,
     "default_branch": "main",
     "permissions": {
         "admin": false,
@@ -144,6 +144,6 @@
         "user_view_type": "public",
         "site_admin": false
     },
-    "network_count": 10143,
-    "subscribers_count": 1321
+    "network_count": 10473,
+    "subscribers_count": 1323
 }
